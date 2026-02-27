@@ -279,7 +279,7 @@ function App() {
               <div className="w-36 h-36 rounded-full mx-auto mb-6 object-cover border-4 border-[#8B7355]/30 shadow-lg bg-[#F5F1E8] flex items-center justify-center overflow-hidden">
                 {/* Placeholder for profile image - replace src with actual image path */}
                 <img 
-                  src="images/profile.png"
+                  src="images/image.png"
                   alt="Pavan Kumar Thirumalasetti"
                   className="w-full h-full object-cover"
                   onError={(e) => {

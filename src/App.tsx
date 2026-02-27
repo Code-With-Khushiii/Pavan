@@ -671,7 +671,7 @@ function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
             <a 
               href="tel:+19408437904"
               className="flex items-center justify-center gap-3 p-6 bg-[#FDFBF7]/5 rounded-sm border border-[#8B7355]/30 hover:bg-[#FDFBF7]/10 transition-all duration-300 group"

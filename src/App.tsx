@@ -322,12 +322,7 @@ function App() {
                 <Mail className="w-4 h-4 inline mr-2" />
                 CONTACT
               </button>
-              <button 
-                className="border border-[#8B7355] text-[#8B7355] px-10 py-4 font-light tracking-wide hover:bg-[#8B7355] hover:text-[#FDFBF7] transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <Download className="w-4 h-4" />
-                RESUME
-              </button>
+              
             </div>
 
             {/* Animated Stats */}
@@ -687,7 +682,7 @@ function App() {
             
             <a 
               href="mailto:pavan.k.thirumalasetti@gmail.com"
-              className="flex items-center justify-center gap-3 p-6 bg-[#FDFBF7]/5 rounded-sm border border-[#8B7355]/30 hover:bg-[#FDFBF7]/10 transition-all duration-300 group"
+              className="flex items-center justify-center gap-3 p-10 bg-[#FDFBF7]/5 rounded-sm border border-[#8B7355]/30 hover:bg-[#FDFBF7]/10 transition-all duration-300 group"
             >
               <Mail className="w-5 h-5 text-[#8B7355] group-hover:scale-110 transition-transform" />
               <span className="text-[#FDFBF7]/80 font-light text-sm">pavan.k.thirumalasetti@gmail.com</span>

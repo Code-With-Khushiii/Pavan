@@ -27,7 +27,7 @@ function App() {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [animatedStats, setAnimatedStats] = useState({ forecasting: 0, reporting: 0, automation: 0 });
-
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useEffect(() => {
     setIsVisible(true);
     
@@ -234,38 +234,76 @@ function App() {
   return (
     <div className="min-h-screen bg-[#FDFBF7] text-[#2C241B] font-sans">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FDFBF7]/95 backdrop-blur-md border-b border-[#8B7355]/20">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-md border-b border-brown/20">
         <div className="max-w-6xl mx-auto px-6 py-4">
+
           <div className="flex items-center justify-between">
-            <div 
-              className="text-2xl font-serif text-[#2C241B] tracking-wide cursor-pointer hover:text-[#8B7355] transition-colors"
-              onClick={() => scrollToSection('hero')}
-            >
-              PAVAN KUMAR
+
+            {/* Logo */}
+            <div className="text-xl md:text-2xl font-display text-black tracking-wide">
+              PAVAN KUMAR THIRUMALASETTI
             </div>
+
+            {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               {[
                 { id: 'hero', label: 'Home' },
                 { id: 'summary', label: 'Summary' },
                 { id: 'experience', label: 'Experience' },
-                { id: 'projects', label: 'Projects' },
                 { id: 'skills', label: 'Skills' },
-                { id: 'certifications', label: 'Certs' },
                 { id: 'education', label: 'Education' },
                 { id: 'contact', label: 'Contact' }
               ].map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-light tracking-wide transition-colors duration-300 ${
-                    activeSection === item.id ? 'text-[#2C241B] font-medium border-b-2 border-[#8B7355]' : 'text-[#8B7355] hover:text-[#2C241B]'
-                  }`}
+                  className={`text-sm font-light tracking-wide transition-colors duration-300 ${activeSection === item.id
+                    ? "text-black font-medium"
+                    : "text-brown hover:text-black"
+                    }`}
                 >
                   {item.label}
                 </button>
               ))}
             </div>
+
+            {/* Mobile Hamburger */}
+            <button
+              className="md:hidden text-black"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            </button>
+
           </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4 flex flex-col space-y-4 border-t border-brown/20 pt-4">
+
+              {[
+                { id: 'hero', label: 'Home' },
+                { id: 'summary', label: 'Summary' },
+                { id: 'experience', label: 'Experience' },
+                { id: 'skills', label: 'Skills' },
+                { id: 'education', label: 'Education' },
+                { id: 'contact', label: 'Contact' }
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    scrollToSection(item.id)
+                    setMobileMenuOpen(false)
+                  }}
+                  className="text-left text-brown hover:text-black transition"
+                >
+                  {item.label}
+                </button>
+              ))}
+
+            </div>
+          )}
+
         </div>
       </nav>
 
